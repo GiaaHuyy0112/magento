@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+      <referenceContainer name="footer">
+        <container name="custom-container" label="Page Footer Custom" htmlTag="div" htmlClass="footer custom">
+            <block class="Magento\Theme\Block\Html\Footer" name="custom-copyright" template="Magento_Theme::html/copyright-custom.phtml" after="-">
+              <block name="custom-block-name" template="Magento_Theme::html/name-custom.phtml" after="-">
+                <arguments>
+                  <argument name="argument1" xsi:type="string">Hello Boyy</argument>
+                  <argument name="argument2" xsi:type="string">Escape String</argument>
+                </arguments>
+              </block>
+            </block>
+        </container>
+      </referenceContainer>
+      <move element="page.messages" destination="header.panel.wrapper" after="-"/>
+    </body>
+</page>
