@@ -19,6 +19,5 @@
             </block>
         </container>
       </referenceContainer>
-      <move element="page.messages" destination="header.panel.wrapper" after="-"/>
     </body>
 </page>
