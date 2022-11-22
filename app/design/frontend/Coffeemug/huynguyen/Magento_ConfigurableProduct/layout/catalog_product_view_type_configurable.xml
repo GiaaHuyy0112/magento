@@ -21,5 +21,8 @@
             <block class="Magento\ConfigurableProduct\Block\Product\View\Type\Configurable" name="product.info.options.configurable" as="options_configurable" before="-" template="Magento_ConfigurableProduct::product/view/type/options/configurable.phtml"/>
         </referenceBlock>
          <referenceBlock name="page.messages" remove="true"/>
+         <referenceContainer name="custom.container">
+            <block name="custom-block" template="Magento_Theme::html/custom-block.phtml" />
+         </referenceContainer>
     </body>
 </page>

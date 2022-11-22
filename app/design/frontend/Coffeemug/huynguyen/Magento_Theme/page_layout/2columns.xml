@@ -12,7 +12,6 @@
         <container name="page.top" as="page_top" label="After Page Header" after="header.container"/>
         <container name="footer-container" as="footer" before="before.body.end" label="Page Footer Container" htmlTag="footer" htmlClass="page-footer"/>
     </referenceContainer>
-    <container name="custom-container" label="custom-container" htmlTag="div" htmlId="custom-container" htmlClass="custom-container container">
-        <block name="custom-block" template="Magento_Theme::html/custom-block.phtml" />
+    <container name="custom.container" label="Custom Container" htmlTag="div" htmlId="custom-container" htmlClass="custom-container container">
     </container>
 </layout>
