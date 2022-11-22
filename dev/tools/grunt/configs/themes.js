@@ -46,6 +46,7 @@ module.exports = {
         name: 'Coffeemug/huynguyen',
         locale: 'en_US',
         files: [
+            'css/custom',
             'css/styles-m',
             'css/styles-l'
         ],
