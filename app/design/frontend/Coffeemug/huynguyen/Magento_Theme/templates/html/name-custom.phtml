@@ -1,5 +1,14 @@
-<h1> Magento Custom Name </h1>
-<strong>
+<h1 id="custom-name"> 
+    Magento Custom Name 
+</h1>
+<strong >
     <?= $block->getData('argument1') ?>
     <?= $block->escapeHtml($block->getData('argument2')) ?>
 </strong>
+<script type="text/x-magento-init">
+    {
+        "#custom-name":{
+            "depJs": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>

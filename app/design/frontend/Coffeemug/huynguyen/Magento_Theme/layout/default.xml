@@ -8,12 +8,18 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
       <referenceContainer name="footer">
+      <container name="widget" label="Wiget" htmlTag="div" htmlId="custom-widget-wrapper" htmlClass="custom-widget-wrapper">
+        <block name="custom-widget" template="Magento_Theme::html/widget.phtml" />
+      </container>
         <container name="custom-container" label="Page Footer Custom" htmlTag="div" htmlClass="footer custom">
-            <block class="Magento\Theme\Block\Html\Footer" name="custom-copyright" template="Magento_Theme::html/copyright-custom.phtml" after="-">
-              <block name="custom-block-name" template="Magento_Theme::html/name-custom.phtml" after="-">
+            <block class="Magento\Theme\Block\Html\Footer" name="custom-copyright" template="Magento_Theme::html/copyright-custom.phtml">
+              <block name="custom-block-name" template="Magento_Theme::html/name-custom.phtml">
                 <arguments>
                   <argument name="argument1" xsi:type="string">Hello Boyy</argument>
                   <argument name="argument2" xsi:type="string">Escape String</argument>
+                  <argument name="jsLayout" xsi:type="array">
+                    <item name="config-1" xsi:type="string">Hello</item>
+                  </argument>
                 </arguments>
               </block>
             </block>
