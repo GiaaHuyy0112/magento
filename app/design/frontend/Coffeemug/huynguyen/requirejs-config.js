@@ -3,7 +3,8 @@ var config = {
         "*": {
             aliasJs: "js/alias",
             depJs: "js/dep",
-            jWidget: "js/jquery-widget"
+            jWidget: "js/jquery-widget",
+            jsLayout: "js/jsLayout"
         },
     },
     paths: {},
@@ -12,7 +13,11 @@ var config = {
         'js/shim':['js/3rd']
     },
     config: {
-        mixins: {},
+        mixins: {
+            'js/widget':{
+                'js/widget-mixin':true
+            }
+        },
         text: {},
     }
 };

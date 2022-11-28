@@ -19,6 +19,7 @@
                   <argument name="argument2" xsi:type="string">Escape String</argument>
                   <argument name="jsLayout" xsi:type="array">
                     <item name="config-1" xsi:type="string">Hello</item>
+                    <item name="config-2" xsi:type="string">Hi</item>
                   </argument>
                 </arguments>
               </block>

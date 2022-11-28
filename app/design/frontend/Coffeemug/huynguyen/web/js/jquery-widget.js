@@ -4,7 +4,7 @@ define([
   ], function ($) {
     $.widget('huynguyen.button', {
       data: {
-        data: '',
+        data1: 'This is data',
       },
   
       /**
@@ -15,11 +15,11 @@ define([
         this._bindCore();
       },
 
-       /**
-         *  Core bound events & setup
-         * @protected
-         */
-        _bindCore: function () {
+      /**
+      *  Core bound events & setup
+      * @protected
+      */
+      _bindCore: function () {
           var widget = this;
 
           this.element.on('click', $.proxy(function (e) {
@@ -33,7 +33,7 @@ define([
        * @private
        */
       _onClick:function (){
-        console.log("Data"+ this.data);
+        console.log("Data:"+ this.data.data1);
       },
       
     });
