@@ -193,6 +193,7 @@
         </images>
     </media>
     <vars module="Magento_Catalog">
+        <var name="custom-var">custom var</var>
 
         <!-- Gallery and magnifier theme settings. Start -->
         <var name="gallery">
@@ -255,7 +256,7 @@
 
         <var name="product_list_image_size">166</var>           <!-- New Product image size used in product list -->
         <var name="product_zoom_image_size">370</var>           <!-- New Product image size used for zooming -->
-
+        
         <var name="product_image_white_borders">1</var>
     </vars>
     <vars module="Magento_Bundle">
