@@ -8,6 +8,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
       <referenceContainer name="footer">
+      <container name="custom-component-wrapper" label="Component" htmlTag="div" htmlId="custom-component-wrapper" htmlClass="custom-component-wrapper">
+        <block name="custom-component" template="Magento_Theme::Div.phtml" />
+      </container>
       <container name="widget" label="Wiget" htmlTag="div" htmlId="custom-widget-wrapper" htmlClass="custom-widget-wrapper">
         <block name="custom-widget" template="Magento_Theme::html/widget.phtml" />
       </container>
