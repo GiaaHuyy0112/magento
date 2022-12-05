@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!--Bootstrap css-->
+        <css src="css/bootstrap.min.css" />
+    </head>
+    <body>
+        <referenceContainer name="main">
+            <container name="page-banner-container" label="Page Container" htmlTag="div" htmlId="banner-container" htmlClass="banner-container">
+                <block name="page-banner" template="Magento_Cms::html/page-banner.phtml"/>
+            </container>
+             <container name="page-content-container" label="Page Container" htmlTag="div" htmlId="content-container" htmlClass="content-container">
+                <block name="page-content" template="Magento_Cms::html/page-content.phtml"/>
+            </container>
+             <container name="page-contact-container" label="Page Container" htmlTag="div" htmlId="contact-container" htmlClass="contact-container">
+                <block name="page-contact" template="Magento_Cms::html/page-contact.phtml"/>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

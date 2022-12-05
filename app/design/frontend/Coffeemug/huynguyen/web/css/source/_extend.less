@@ -1,0 +1,319 @@
+// Variables
+@cl-orange: #CA5F30;
+@cl-black: #292824;
+@cl-dark: #31240D;
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('@{baseDir}/fonts/tungsten.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('@{baseDir}/fonts/roboto.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Mixins
+.primary-font {
+    font-family: 'Tungsten';
+}
+
+.secondary-font {
+    font-family: "Roboto";
+}
+
+.custom_button {
+    .primary-font();
+    font-size: 20px;
+    border-radius: 3px;
+    font-weight: 326;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.custom_button-small {
+    .secondary-font();
+    font-size: 16px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 70px;
+    justify-content: center;
+}
+
+.grid-1-col {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 0px;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center
+}
+
+// Styles
+.cms-prometheus {
+    .main {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            .primary-font();
+            font-style: normal;
+            margin: 0;
+            color: @cl-black;
+        }
+
+        p {
+            .secondary-font();
+            font-size: 16px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.02em;
+            color: @cl-black;
+        }
+
+        a.email {
+            color: @cl-orange;
+            font-weight: 500;
+        }
+
+        .wrapper {
+            padding-top: 56px;
+            padding-bottom: 80px;
+        }
+
+        .btn-orange {
+            .custom_button();
+            background-color: @cl-orange;
+            color: white;
+            border: none;
+        }
+
+        .btn-white {
+            .custom_button();
+            background-color: transparent;
+            color: @cl-black;
+            border: 1px solid @cl-black;
+            margin-left: 16px;
+        }
+
+        // .btn-black {
+        //     background: @cl-dark;
+        //     color: white
+        // }
+
+        .btn-gray {
+            background: @cl-dark;
+            color: white;
+            opacity: 0.25;
+            margin-left: 16px;
+
+            &.active {
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+
+        .grid-2 {
+            @media only screen and (min-width: (@screen__xs+1)) {
+                .grid-2-col();
+            }
+
+            @media only screen and (max-width: @screen__xs) {
+                .grid-1-col();
+            }
+        }
+
+        .section:not(.section.active) {
+            display: none;
+        }
+
+        .banner-container {
+            background: url('@{baseDir}images/banner.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+
+            .col {
+                align-self: center;
+            }
+
+            .content-wrapper {
+                div {
+                    margin-bottom: 24px;
+                }
+
+                button {
+                    .custom_button();
+                    padding: 12px 24px;
+                }
+            }
+        }
+
+        .content-container {
+
+            .images-wrapper {
+                justify-content: flex-start;
+
+                img {
+                    width: 400px;
+                }
+            }
+
+            .col-right {
+                .actions-wrapper {
+                    margin-bottom: 40px;
+
+                    .btn-action {
+                        .custom_button-small();
+                        padding: 4px 16px;
+                    }
+                }
+
+                .row:not(.row:last-child) {
+                    margin-bottom: 40px;
+                }
+            }
+
+            .sections-wrapper {
+                h2.title {
+                    font-weight: 326;
+                    font-size: 28px;
+                    line-height: 32px;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                }
+
+                p.subtitle {
+                    margin-top: 14px;
+                }
+            }
+        }
+
+        .contact-container {
+            background: @cl-dark;
+
+            .wrapper {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+
+            .title {
+                color: white;
+                font-weight: 326;
+                font-size: 40px;
+                line-height: 48px;
+                margin-right: 40px;
+            }
+
+            button {
+                padding: 12px 64px;
+            }
+
+            .contact-content {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media only screen and (max-width: @screen__xs) {
+        .main {
+            .grid-2 {
+                .grid-1-col();
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .wrapper {
+                padding-top: 24px;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-bottom: 40px;
+            }
+
+            .banner-container {
+
+                .title,
+                .content,
+                .link,
+                .actions {
+                    text-align: center;
+                }
+
+                .image-wrapper {
+                    width: 251px;
+                    margin: auto;
+                }
+            }
+
+            .contact-container {
+                position: fixed;
+                bottom: 0px;
+                width: 100%;
+
+                .wrapper {
+                    padding: 12px 16px 12px 16px;
+                }
+
+                .contact-content {
+
+
+                    .title,
+                    button {
+                        font-size: 16px;
+                        font-weight: 326;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+
+                    h1.title {
+                        margin-right: 20px;
+                        align-self: center;
+                    }
+
+                    button {
+                        padding: 8px 16px;
+                    }
+                }
+            }
+
+            .content-container {
+                .images-wrapper {
+                    display: none;
+                }
+            }
+
+        }
+
+    }
+}

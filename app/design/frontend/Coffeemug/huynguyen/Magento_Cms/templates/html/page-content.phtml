@@ -1,0 +1,22 @@
+<div class="page-main content-wrapper wrapper">
+    <div class="row content_inner grid-2">
+        <div class="col-lg-12 col">
+            <div class="row images-wrapper">
+                <img class="section-1 section active" src="<?= $this->getViewFileUrl('images/item-b.png'); ?>" alt="Prometheus Black">
+                <img class="section-2 section" src="<?= $this->getViewFileUrl('images/item-w.png'); ?>" alt="Prometheus White">
+            </div>
+        </div>
+        <div class="col-lg-12 col col-right">
+            <div class="row actions-wrapper">
+                <div class="col">
+                    <button class="btn-action btn-gray active" data-section="1" data-mage-init='{"jButton":{}}'>Features</button>
+                    <button class="btn-action btn-gray" data-section="2" data-mage-init='{"jButton":{}}'>Specification</button>
+                </div>
+            </div>
+            <div class="row sections-wrapper">
+                <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Cms::html/components/section1.phtml")->toHtml(); ?>
+                <?php echo $this->getLayout()->createBlock("Magento\Framework\View\Element\Template")->setTemplate("Magento_Cms::html/components/section2.phtml")->toHtml(); ?>
+            </div>
+        </div>
+    </div>
+</div>
