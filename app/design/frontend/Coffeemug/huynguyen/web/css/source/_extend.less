@@ -17,6 +17,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Work Sans';
+    src: url('@{baseDir}/fonts/worksans.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // Mixins
 .primary-font {
     font-family: 'Tungsten';
@@ -361,6 +368,14 @@
 
                 .name-wrapper {
                     margin-bottom: 30px;
+
+                    .cat-name {
+                        font-family: 'Work Sans';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 150%;
+                    }
                 }
             }
         }
