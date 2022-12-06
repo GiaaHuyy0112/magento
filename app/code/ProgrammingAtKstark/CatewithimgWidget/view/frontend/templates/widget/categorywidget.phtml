@@ -1,0 +1,46 @@
+<?php
+$categories = $this->getCategoryCollection();
+$categoryHelper = $this->getCategoryHelper();
+?>
+<div class="widget block block-static-block cwiw" id="catewithimg">
+    <div class="block-content">
+        <div class="content-heading">
+            <h2 class="title"><?php echo $this->getMainTitle(); ?></h2>
+            <p class="info"><?php echo $this->getTagLine(); ?></p>
+        </div>
+        <div class="row">
+            <?php
+            foreach ($categories as $category) :
+                $cat = $this->getCategorymodel($category->getId());
+                $image = $cat->getImageUrl();
+            ?>
+                <?php if ($image != null) : ?>
+                    <div class="col-md-3">
+                        <a class="cat-block" href="<?php echo $cat->getUrl(); ?>">
+                            <div class="category-wrapper">
+                                <div class="image-wrapper">
+                                    <img src="<?php echo $image; ?>" class="img-responsive category_image" alt="<?php echo $cat->getName(); ?>" />
+                                </div>
+                                <div class="name-wrapper">
+                                    <h3 class="cat-name"><span><?php echo $cat->getName(); ?></span></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <div class="col-md-3">
+                <a class="cat-block" href="#all">
+                    <div class="category-wrapper">
+                        <div class="image-wrapper">
+                            <img src="<?= $this->getViewFileUrl('images/arrow.png'); ?>" class="img-responsive category_image" alt="All Other Brands" />
+                        </div>
+                        <div class="name-wrapper">
+                            <h3 class="cat-name all"><span>All Other Brands</span></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
