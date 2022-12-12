@@ -21,11 +21,7 @@
                 <height>100</height>
             </image>
             <image id="category_page_grid" type="small_image">
-                <width>150</width>
-                <height>300</height>
-            </image>
-            <image id="category_page_grid-1" type="small_image">
-                <width>240</width>
+                <width>300</width>
                 <height>300</height>
             </image>
             <image id="category_page_list" type="small_image">
@@ -228,11 +224,11 @@
             <var name="fullscreenzoom">20</var>  <!-- Zoom for fullscreen (integer)-->
             <var name="top"></var> <!-- Top position of magnifier -->
             <var name="left"></var> <!-- Left position of magnifier -->
-            <var name="width"></var> <!-- Width of magnifier block -->
-            <var name="height"></var> <!-- Height of magnifier block -->
+            <var name="width">20</var> <!-- Width of magnifier block -->
+            <var name="height">20</var> <!-- Height of magnifier block -->
             <var name="eventType">hover</var> <!-- Action that atcivates zoom (hover/click) -->
-            <var name="enabled">false</var> <!-- Turn on/off magnifier (true/false) -->
-            <var name="mode">outside</var> <!-- Zoom type (outside/inside) -->
+            <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
+            <var name="mode">inside</var> <!-- Zoom type (outside/inside) -->
         </var>
 
         <var name="breakpoints">
