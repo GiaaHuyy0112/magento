@@ -21,6 +21,7 @@ use Magento\Framework\App\Action\Action;
 $_productCollection = $block->getLoadedProductCollection();
 /** @var \Magento\Catalog\Helper\Output $_helper */
 $_helper = $block->getData('outputHelper');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 ?>
 <?php if (!$_productCollection->count()) : ?>
     <div class="message info empty">
@@ -75,17 +76,57 @@ $_helper = $block->getData('outputHelper');
 
                         </div>
                         <div class="row product-stock-wrapper">
-                            <?php if ($_product->isAvailable()) : ?>
-                                <div class="stock available col-md-12 col">
-                                    <img class="stock-status-image" src="<?= $this->getViewFileUrl('images/available.png'); ?>" alt="available">
-                                    <span><?= $escaper->escapeHtml(__('In stock')) ?></span>
-                                </div>
-                            <?php else : ?>
-                                <div class="stock unavailable col-md-12 col">
-                                    <img class="stock-status-image" src="<?= $this->getViewFileUrl('images/unavailable.png'); ?>" alt="unavailable">
-                                    <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span>
-                                </div>
-                            <?php endif; ?>
+                            <div class="col-md-6 col product-stock">
+                                <?php if ($_product->isAvailable()) : ?>
+                                    <?php
+                                    $product_Id = $_product->getId();
+                                    $stockInfo = $objectManager->get('Magento\CatalogInventory\Api\StockRegistryInterface')->getStockItem($product_Id);
+                                    $stockqty = (int)$stockInfo->getQty();
+                                    ?>
+                                    <?php if ($stockqty <= 5 && $_product->getTypeId() == "simple") : ?>
+                                        <?php $stockHtml = 'Only ' . $stockqty . ' Left' ?>
+                                        <div class="stock available col-md-12 col">
+                                            <img class="stock-status-image" src="<?= $this->getViewFileUrl('images/unavailable.png'); ?>" alt="unavailable">
+                                            <span><?= $escaper->escapeHtml(__($stockHtml)) ?></span>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="stock available col-md-12 col">
+                                            <img class="stock-status-image" src="<?= $this->getViewFileUrl('images/available.png'); ?>" alt="available">
+                                            <span><?= $escaper->escapeHtml(__('In stock')) ?></span>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php else : ?>
+                                    <div class="stock unavailable col-md-12 col">
+                                        <img class="stock-status-image" src="<?= $this->getViewFileUrl('images/unavailable.png'); ?>" alt="unavailable">
+                                        <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-6 col product-badge">
+                                <?php
+                                $simplePrice = 0;
+                                $_savingPercent = 0;
+                                if ($_product->getTypeId() == "simple") {
+                                    $simplePrice = $_product->getPrice();
+                                } else {
+                                    $_children = $_product->getTypeInstance()->getUsedProducts($_product);
+                                    foreach ($_children as $child) {
+                                        $simplePrice = $child->getPrice();
+                                        break;
+                                    }
+                                }
+
+                                $_finalPrice = $_product->getFinalPrice();
+                                $_price = $simplePrice;
+                                if ($_finalPrice < $_price) {
+                                    $_savingPercent = 100 - round(($_finalPrice / $_price) * 100);
+                                }
+                                ?>
+                                <?php if ($_savingPercent > 0) : ?>
+                                    <span><strong><?= $_savingPercent ?></strong>% <?= __('Off'); ?></span>
+                                <?php endif; ?>
+                            </div>
+
                         </div>
                         <div class="row product-actions-wrapper">
                             <div class="product-item-inner row">

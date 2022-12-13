@@ -22,11 +22,7 @@
             <div class="block-content filter-content">
                 <?= $block->getChildHtml('state') ?>
 
-                <?php if ($block->getLayer()->getState()->getFilters()) : ?>
-                    <div class="block-actions filter-actions">
-                        <a href="<?= $block->escapeUrl($block->getClearUrl()) ?>" class="action clear filter-clear"><span><?= $block->escapeHtml(__('Clear All')) ?></span></a>
-                    </div>
-                <?php endif; ?>
+
                 <?php $wrapOptions = false; ?>
                 <?php foreach ($block->getFilters() as $filter) : ?>
                     <?php if (!$wrapOptions) : ?>
@@ -44,7 +40,29 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                     <?php if ($wrapOptions) : ?>
+                        <div class="col-md-12 select sort-filter">
+                            <dt role="heading" aria-level="3" class="filter-options-title">
+                                <?= $block->escapeHtml(__('SORT BY')) ?>
+                            </dt>
+                            <dd class="filter-options-content">
+                                <ol class="items">
+                                    <li class="item">
+                                        <a href="?product_list_order=name" rel="nofollow">Product Name</span>
+                                        </a>
+                                    </li>
+                                    <li class="item">
+                                        <a href="?product_list_order=price" rel="nofollow">Price</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </div>
                         </dl>
+                    <?php endif; ?>
+                    <?php if ($block->getLayer()->getState()->getFilters()) : ?>
+                        <div class="block-actions filter-actions">
+                            <a href="<?= $block->escapeUrl($block->getClearUrl()) ?>" class="action clear filter-clear"><span><?= $block->escapeHtml(__('Reset Filter')) ?></span></a>
+                        </div>
                     <?php endif; ?>
             </div>
         </div>

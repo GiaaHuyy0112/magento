@@ -5,5 +5,8 @@
         <referenceContainer name="content" htmlTag="main" htmlClass="page-main" />
         <referenceBlock name="breadcrumbs" remove="true"/>
         <move element="category.view.container" destination="page.main.title" />
+        <referenceBlock name="main.content">
+                <block name="category.description" template="Magento_Catalog::descriptions.phtml" after="-"/>
+        </referenceBlock>
     </body>
 </page>
