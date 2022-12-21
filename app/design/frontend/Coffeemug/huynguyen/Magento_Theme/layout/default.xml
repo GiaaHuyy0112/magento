@@ -9,7 +9,33 @@
     <body>
       <referenceContainer name="footer">
       <container name="custom-component-wrapper" label="Component" htmlTag="div" htmlId="custom-component-wrapper" htmlClass="custom-component-wrapper">
-        <block name="custom-component" template="Magento_Theme::Div.phtml" />
+        <block name="custom-component" template="Magento_Theme::div.phtml" >
+        <arguments>
+          <argument name="jsLayout" xsi:type="array">
+            <item name="components" xsi:type="array">
+              <item name="mycomponent" xsi:type="array">
+                <item name="component" xsi:type="string">
+                  js/component
+                </item>
+                <item name="config" xsi:type="array">
+                  <item name="template" xsi:type="string">
+                    Magento_Theme/ko
+                  </item>
+                  <item name="content" xsi:type="string">
+                    This is a content
+                  </item>
+                  <item name="update" xsi:type="string">
+                    This is a update content
+                  </item>
+                  <item name="waiting" xsi:type="string">
+                    This is a waiting content
+                  </item>
+                </item>
+              </item>
+            </item>
+          </argument>
+        </arguments>
+        </block>
       </container>
       <container name="widget" label="Wiget" htmlTag="div" htmlId="custom-widget-wrapper" htmlClass="custom-widget-wrapper">
         <block name="custom-widget" template="Magento_Theme::html/widget.phtml" />

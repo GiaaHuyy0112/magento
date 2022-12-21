@@ -1,0 +1,30 @@
+<div id="koComponent" data-bind="scope: 'mycomponent'">
+    <div data-bind='text: content'></div>
+    <button data-bind="click: onClick">Update</button>
+    <!-- ko template: getTemplate() -->
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "Magento_Ui/js/core/app": {
+                "components":{
+                    "mycomponent":{
+                        "content":"This is a config content",
+                        "update":"This is a update content",
+                        "waiting": "This is a waiting content",
+                        "component": "js/component",
+                        "template":"Magento_Theme/ko"
+                    }
+                }
+            }
+        }
+    }
+</script>
+<!-- <script type="text/x-magento-init">
+    {
+        "#koComponent":{
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script> -->

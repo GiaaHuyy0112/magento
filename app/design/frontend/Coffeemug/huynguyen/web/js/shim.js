@@ -1,5 +1,5 @@
 function getShim(){
     var string = "Shim";
-    alert(string);
+    // alert(string);
 }
 getShim();
