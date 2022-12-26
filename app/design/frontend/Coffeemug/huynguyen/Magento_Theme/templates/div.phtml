@@ -1,10 +1,12 @@
 <div id="koComponent" data-bind="scope: 'mycomponent'">
-    <div data-bind='text: content'></div>
-    <button data-bind="click: onClick">Update</button>
+    <div>
+        <div data-bind='text: content'></div>
+        <button data-bind="click: onClick">Update</button>
+    </div>
     <!-- ko template: getTemplate() -->
     <!-- /ko -->
 </div>
-<script type="text/x-magento-init">
+<!-- <script type="text/x-magento-init">
     {
         "*":{
             "Magento_Ui/js/core/app": {
@@ -20,11 +22,11 @@
             }
         }
     }
-</script>
-<!-- <script type="text/x-magento-init">
+</script> -->
+<script type="text/x-magento-init">
     {
         "#koComponent":{
             "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
         }
     }
-</script> -->
+</script>

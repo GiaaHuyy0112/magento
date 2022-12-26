@@ -1,0 +1,11 @@
+<div id="component2" class="col-md-6" data-bind="scope: 'component2'">
+    <!-- ko template: getTemplate() -->
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#component2":{
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>

@@ -1,5 +1,28 @@
 <div class="ko-component">
-    <p class="content">0</p>
+    <h1>Data Exports: <strong data-bind="text: dataExports"></strong></h1>
+    <h2 data-bind="text: fullName"></h2>
+    <ul class="listItem" data-bind="foreach: items">
+        <li class="item">
+            <p class="content" data-bind="text: name"></p>
+            <button data-bind="click: $parent.clickSubItem.bind($parent)">-</button>
+        </li>
+    </ul>
+    <ul class="listItem" data-bind="foreach: itemsLastName">
+        <li class="item">
+            <p class="content" data-bind="text: name"></p>
+            <button data-bind="click: $parent.clickSubItem.bind($parent)">-</button>
+        </li>
+    </ul>
+    <h4><strong data-bind="text: count"></strong></h4>
+    <h4>Hello, <strong data-bind="text: fullName"></strong></h4>
     <button data-bind="click: clickAdd" >+</button>
     <button data-bind="click: clickSub">-</button>
+    <button data-bind="click: clickAuto" >Auto</button>
+    <div>
+        <p data-bind="text: textLink"></p>
+        <textarea id="bio"
+        cols="5"
+        rows="5"
+        data-bind="textInput: textLink"></textarea>
+    </div>
 </div>
