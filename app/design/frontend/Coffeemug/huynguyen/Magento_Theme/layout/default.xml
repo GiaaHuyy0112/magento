@@ -92,7 +92,7 @@
             <block class="Magento\Theme\Block\Html\Footer" name="custom-copyright" template="Magento_Theme::html/copyright-custom.phtml">
               <block name="custom-block-name" template="Magento_Theme::html/name-custom.phtml">
                 <arguments>
-                  <argument name="argument1" xsi:type="string">Hello Boyy</argument>
+                  <argument name="argument1" translate="true" xsi:type="string">Hello Boyy</argument>
                   <argument name="argument2" xsi:type="string">Escape String</argument>
                   <argument name="jsLayout" xsi:type="array">
                     <item name="config-1" xsi:type="string">Hello</item>
