@@ -1,0 +1,188 @@
+@font1: 'Roboto';
+@font2: 'Tungsten';
+@color1: #EDE8E1;
+
+
+@font-face {
+    font-family: 'Tungsten';
+    src: url('@{baseDir}/fonts/tungsten.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#slickSlider {
+    background: @color1;
+    padding: 95px 135px;
+
+    @media only screen and (max-width: (@screen__xs)) {
+        padding: 15px;
+    }
+
+
+    .products {
+        .block-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .block-title {
+                strong {
+                    font-family: @font2;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 40px;
+                    line-height: 48px;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+
+                }
+            }
+
+            .button-wrapper {
+                height: 40px;
+                display: flex;
+                justify-content: flex-end;
+
+                button {
+                    position: initial;
+                    background: transparent;
+
+                    &.slick-next::before {
+                        content: '\2192';
+                    }
+
+                    &.slick-prev::before {
+                        content: '\2190';
+                    }
+                }
+            }
+        }
+
+    }
+
+    .product {
+        margin: 0;
+
+        .product-item-info {
+            margin: 0;
+            width: 95%;
+
+
+
+            .product-item-details {
+                .product-image-container-wrapper {
+                    position: relative;
+                    margin: 0;
+                    padding: 0;
+
+                    .stock {
+                        background: #D0E9D7;
+                        color: #34A853;
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        width: fit-content;
+                        padding: 5px;
+                        position: absolute;
+                        top: 5px;
+                        right: 15px;
+                        z-index: 100;
+
+                        span::before {
+                            content: "\2022";
+                            font-size: 22px;
+                            vertical-align: middle;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    a.product-item-photo {
+                        display: block;
+                        padding: 0;
+
+                        .product-image-container {
+                            width: 100% !important;
+
+                            .product-image-wrapper {
+                                padding-bottom: 100% !important;
+                            }
+
+                            img {
+                                margin: 0;
+                                width: 100%;
+                                aspect-ratio: 1;
+                            }
+                        }
+                    }
+
+                }
+
+                .product-item-title {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                .product-item-sku span {
+                    font-family: @font1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: #292824;
+                    opacity: 0.5;
+                }
+
+
+                .price-box {
+                    margin: 0;
+
+                    .price-label {
+                        display: none;
+                    }
+                }
+
+                .product-item-name,
+                .product-item-name a,
+                .price-container .price {
+                    font-family: @font1;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 20px;
+                    letter-spacing: 0.02em;
+                    color: #292824;
+
+                }
+
+                .actions-secondary {
+                    .action.tocompare {
+                        display: none;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: (@screen__xs)) {
+    #slickSlider {
+        padding: 15px;
+
+        .products {
+            .block-header {
+
+                .block-title {
+                    strong {
+                        font-size: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+}
