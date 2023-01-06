@@ -1,0 +1,39 @@
+<div class="newsletter-wrapper">
+    <span class="newsletter-content">Subscribe for 10% off</span>
+</div>
+
+<div id="modal-content">
+    <div class="modal-inner-content">
+        <h3 class="subtitle">New to DCO?</h3>
+        <h1 class="title">Subscribe for <span>10% off</span> your first order</h1>
+        <p class="content">Get helpful decorating advice, tips and special offers </p>
+        <form class="form subscribe" novalidate action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>" method="post" data-mage-init='{"validation": {"errorClass": "mage-error"}}' id="newsletter-validate-detail">
+            <div class="row input-wrapper">
+                <div class="field newsletter col-md-10">
+                    <div class="control">
+                        <label for="newsletter">
+                            <span class="label">
+                                <?= $block->escapeHtml(__('')) ?>
+                            </span>
+                            <input name="email" type="email" id="newsletter" placeholder="<?= $block->escapeHtml(__('Your email address')) ?>" data-mage-init='{"mage/trim-input":{}}' data-validate="{required:true, 'validate-email':true}" />
+                        </label>
+                    </div>
+                </div>
+                <div class="actions col-md-1">
+                    <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('&rarr;')) ?>" type="submit" aria-label="Subscribe">
+                        <span><?= $block->escapeHtml(__('&rarr;')) ?></span>
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#subcribeBlock":{
+            "customModal":{}
+        }
+    }
+</script>

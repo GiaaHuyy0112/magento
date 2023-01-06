@@ -3,7 +3,8 @@ var config = {
         "*": {
             slickJs: "js/slick.min",
             slickSlider: 'js/slider',
-            matchHeightJs: 'js/jquery.matchHeight'
+            matchHeightJs: 'js/jquery.matchHeight',
+            customModal: 'js/modal'
         },
     }
 };
