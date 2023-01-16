@@ -1,0 +1,11 @@
+<p>Component</p>
+<div>
+    <h1>Products</h1>
+    <div class="products" data-bind="foreach: products">
+        <a class="product item" data-bind="attr:{href: url}">
+            <img data-bind="attr:{src: image}" />  
+            <h4 data-bind="text: title"></h4>
+            <span>$<strong data-bind="text: saleprice"></strong></span>
+        </a>
+    </div>
+</div>

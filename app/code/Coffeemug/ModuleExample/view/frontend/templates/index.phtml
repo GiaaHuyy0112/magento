@@ -1,0 +1,15 @@
+<?= $this->getLayout()
+    ->createBlock('Magento\Cms\Block\Block')
+    ->setBlockId('extra-block')
+    ->toHtml(); ?>
+<div id="component" class="col-md-6" data-bind="scope: 'componentBlock'">
+    <!-- ko template: getTemplate() -->
+    <!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#component":{
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>
