@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+
+$_product = $this->getProduct();
+
+?>
+<?php if (null !== $_product->getCustomAttribute('ghn') && $_product->getCustomAttribute('ghn')->getValue() == 1) { ?>
+    <div class="product-item-ghn product-item-attr">
+        <img width="20" height="20" src="<?= $this->getViewFileUrl('Coffeemug_ModuleExample::images/ghn.png'); ?>" alt="ghn">
+        <span class="title"><?= $_product->getResource()->getAttribute('ghn')->getStoreLabel(); ?></span>
+    </div>
+<?php } ?>
+
+<?php if (null !== $_product->getCustomAttribute('freeship') && $_product->getCustomAttribute('freeship')->getValue() == 1) { ?>
+    <div class="product-item-freeship product-item-attr">
+        <img width="20" height="20" src="<?= $this->getViewFileUrl('Coffeemug_ModuleExample::images/freeship.png'); ?>" alt="freeship">
+        <span class="title"><?= $_product->getResource()->getAttribute('freeship')->getStoreLabel(); ?></span>
+    </div>
+<?php } ?>

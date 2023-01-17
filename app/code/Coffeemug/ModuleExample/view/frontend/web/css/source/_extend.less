@@ -1,16 +1,37 @@
-.products {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 20px;
+.coffeemugex1-page-page1 {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 20px;
+    }
+
+    .product.item {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
 }
 
-.product.item {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+.products {
+    .product-item-attr {
+        display: flex;
+        gap: 5px;
+    }
+}
+
+.product-info-main {
+    .product-item-attr {
+        display: flex;
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .product-item-ghn {
+        background: antiquewhite;
+    }
 }

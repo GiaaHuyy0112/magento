@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View" name="product.before.title" template="Coffeemug_ModuleExample::product/view/before_title.phtml" before="-"/>
+            <block class="Magento\Catalog\Block\Product\View" name="product.after.price" template="Coffeemug_ModuleExample::product/view/after_price.phtml" after="product.info.price"/>
+        </referenceContainer>
+    </body>
+</page>

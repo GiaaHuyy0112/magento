@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+
+$_product = $this->getProduct();
+
+$optionId = $_product->getCustomAttribute('makein')->getValue();
+
+
+?>
+<?php if (null !== $_product->getCustomAttribute('makein') && $optionId != '') { ?>
+    <div class="product-item-attr">
+        <h2 class="title">
+            <strong><?= $_product->getResource()->getAttribute('makein')->getStoreLabel(); ?>:</strong>
+            <?= $_product->getResource()->getAttribute('makein')->getSource()->getOptionText($optionId); ?>
+        </h2>
+    </div>
+<?php } ?>
