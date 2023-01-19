@@ -8,7 +8,9 @@
 
 $_product = $this->getProduct();
 
-$optionId = $_product->getCustomAttribute('makein')->getValue();
+if ($_product->getCustomAttribute('makein') !== null) {
+    $optionId = $_product->getCustomAttribute('makein')->getValue();
+}
 
 
 ?>
