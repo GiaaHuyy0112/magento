@@ -6,10 +6,19 @@
     <!-- ko template: getTemplate() -->
     <!-- /ko -->
 </div>
+
+
 <script type="text/x-magento-init">
     {
-        "#component":{
-            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "componentBlock": {
+                    "component": "Coffeemug_ModuleExample/js/component",
+                    "template": "Coffeemug_ModuleExample/component"
+                }
+            }
         }
+    }
     }
 </script>
