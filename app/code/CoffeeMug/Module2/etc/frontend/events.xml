@@ -2,4 +2,7 @@
     <event name="controller_action_predispatch">
         <observer name="coffeemug_module2_observer" instance="CoffeeMug\Module2\Observer\CustomObserver" />
     </event>
+    <event name="controller_front_send_response_before">
+        <observer name="coffeemug_module2_capture_page_html" instance="CoffeeMug\Module2\Observer\CapturePageHtml" />
+    </event>
 </config>

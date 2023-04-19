@@ -1,0 +1,17 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\RouterList">
+        <arguments>
+            <argument name="routerList" xsi:type="array">
+                <item name="coffeemug_module2" xsi:type="array">
+                    <item name="class" xsi:type="string">CoffeeMug\Module2\Controller\Router</item>
+                    <item name="sortOrder" xsi:type="string">5</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Catalog\Controller\Product\View" type="CoffeeMug\Module2\Controller\Product\View" />
+    <type name="Magento\Catalog\Controller\Product\View">
+        <plugin name="custom_catalog_product_view" type="CoffeeMug\Module2\Plugin\Catalog\Product\View" sortOrder="10" />
+    </type>
+</config>
