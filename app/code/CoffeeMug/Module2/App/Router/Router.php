@@ -2,15 +2,20 @@
 
 namespace CoffeeMug\Module2\App\Router;
 
-use Magento\Framework\App\Action\Redirect;
 use Magento\Framework\App\ActionFactory;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\App\Router\Base;
+use \Magento\Framework\App\RouterInterface;
 
-class Router extends Base
+class Router implements RouterInterface
 {
+    /**
+     * @var ActionFactory
+     */
     protected $actionFactory;
 
+    /**
+     * @param ActionFactory $actionFactory
+     */
     public function __construct(ActionFactory $actionFactory)
     {
         $this->actionFactory = $actionFactory;
@@ -18,14 +23,12 @@ class Router extends Base
 
     public function match(RequestInterface $request)
     {
-        $pathInfo = $request->getPathInfo();
-        \Magento\Framework\App\ObjectManager::getInstance()->get(\Psr\Log\LoggerInterface::class)->debug("URL:");
-        \Magento\Framework\App\ObjectManager::getInstance()->get(\Psr\Log\LoggerInterface::class)->debug($pathInfo);
-        if ($pathInfo == '/special-url') {
-            $redirect = $this->actionFactory->create(Redirect::class);
-            $redirect->setPath('special-page');
-            return $redirect;
+        $info = $request->getPathInfo();
+        if (preg_match("%^/(.*?)-(.*?)-(.*?)$%", $info, $m)) {
+            $request->setPathInfo(sprintf("/%s/%s/%s", $m[1], $m[2], $m[3]));
+
+            return $this->actionFactory->create(\Magento\Framework\App\Action\Forward::class);
         }
-        return false;
+        return null;
     }
 }

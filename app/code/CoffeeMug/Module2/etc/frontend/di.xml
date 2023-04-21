@@ -4,8 +4,9 @@
         <arguments>
             <argument name="routerList" xsi:type="array">
                 <item name="coffeemug_module2" xsi:type="array">
-                    <item name="class" xsi:type="string">CoffeeMug\Module2\Controller\Router</item>
-                    <item name="sortOrder" xsi:type="string">5</item>
+                    <item name="class" xsi:type="string">CoffeeMug\Module2\App\Router\Router</item>
+                    <item name="disable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
                 </item>
             </argument>
         </arguments>

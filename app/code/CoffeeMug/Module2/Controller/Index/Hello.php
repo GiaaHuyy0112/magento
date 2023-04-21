@@ -20,6 +20,7 @@ class Hello extends Action
     {
         $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         $result->getConfig()->getTitle()->prepend(__('Hello World'));
+        // $result->getConfig()->appendBody('Hello World');
 
         return $result;
     }

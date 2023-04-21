@@ -11,4 +11,14 @@
     <type name="Magento\Theme\Block\Html\Breadcrumbs">
         <plugin name="coffeemug_module2_modifybreadcrumbs" type="CoffeeMug\Module2\Plugin\ModifyBreadcrumbs" sortOrder="1"/>
     </type>
+    <type name="Magento\Framework\App\Router\NoRouteHandlerList">
+        <arguments>
+            <argument name="handlerClassesList" xsi:type="array">
+                <item name="custom" xsi:type="array">
+                    <item name="class" xsi:type="string">CoffeeMug\Module2\App\Router\NoRouteHandler</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>
