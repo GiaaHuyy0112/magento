@@ -1,6 +1,6 @@
 <?php
 
-namespace CoffeeMug\Module2\Controller\Index;
+namespace CoffeeMug\Module3\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -18,9 +18,12 @@ class Hello extends Action
 
     public function execute()
     {
-        $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
-        $result->getConfig()->getTitle()->prepend(__('Hello World'));
+        // Render "HELLO WORLD" message
+        echo "HELLO WORLD";
 
-        return $result;
+        // Redirect to specific category page
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('catalog/category/view/id/1');
+        return $resultRedirect;
     }
 }

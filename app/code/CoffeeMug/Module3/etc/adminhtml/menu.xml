@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="CoffeeMug_Module3::main" title="Module3" module="CoffeeMug_Module3" sortOrder="10" resource="CoffeeMug_Module3::main"/>
+        <add id="CoffeeMug_Module3::item" title="Hello" module="CoffeeMug_Module3" sortOrder="10" parent="CoffeeMug_Module3::main" action="module3/custom/index" resource="CoffeeMug_Module3::item"/>
+    </menu>
+</config>

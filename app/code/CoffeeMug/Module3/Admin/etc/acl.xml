@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="CoffeeMug_Module3::main" title="Module3" sortOrder="10"/>
+            <resource id="CoffeeMug_Module3::item" title="Hello" sortOrder="10" parent="CoffeeMug_Module3::main"/>
+        </resources>
+    </acl>
+</config>

@@ -43,6 +43,5 @@ class ProductView implements ObserverInterface
 
     public function execute(Observer $observer)
     {
-        echo ("Hello");
     }
 }
