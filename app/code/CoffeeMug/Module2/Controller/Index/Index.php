@@ -27,6 +27,7 @@ class Index extends \Magento\Framework\App\Action\Action
 
         foreach ($routes as $route) {
             echo $route . '<br>';
+            \Magento\Framework\App\ObjectManager::getInstance()->get(\Psr\Log\LoggerInterface::class)->debug($route);
         }
         exit;
     }
