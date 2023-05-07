@@ -24,9 +24,10 @@ class Router implements RouterInterface
     public function match(RequestInterface $request)
     {
         $info = $request->getPathInfo();
-        if (preg_match("%^/(.*?)-(.*?)-(.*?)$%", $info, $m)) {
-            $request->setPathInfo(sprintf("/%s/%s/%s", $m[1], $m[2], $m[3]));
-
+        if (preg_match("%^/(.*?)-(.*?)-(.*?)-(.*?)$%", $info, $m)) {
+            if ($m[1] == 'test') {
+                $request->setPathInfo(sprintf("/%s/%s/%s", $m[2], $m[3], $m[4]));
+            }
             return $this->actionFactory->create(\Magento\Framework\App\Action\Forward::class);
         }
         return null;
