@@ -19,6 +19,7 @@ class CustomObserver implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $url = $this->request->getPathInfo();
+        $this->logger->debug("Path Info:");
         $this->logger->debug($url);
         // Your code here
         // This method will be executed when the event is triggered
