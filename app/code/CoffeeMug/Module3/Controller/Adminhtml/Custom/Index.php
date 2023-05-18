@@ -48,5 +48,7 @@ class Index extends Action implements HttpGetActionInterface
             $this->_forward('noroute');
             return;
         }
+
+        return true;
     }
 }
