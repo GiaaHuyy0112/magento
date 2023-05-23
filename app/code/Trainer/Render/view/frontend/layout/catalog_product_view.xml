@@ -10,7 +10,7 @@
         <referenceBlock name="render_block">
             <arguments>
                 <argument name="background_color" xsi:type="string">
-                    red
+                    orange
                 </argument>
             </arguments>
         </referenceBlock>
