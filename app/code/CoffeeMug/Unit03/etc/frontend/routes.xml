@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="coffeemug_unit03" frontName="unit03">
+            <module name="CoffeeMug_Unit03" />
+        </route>
+    </router>
+</config>
