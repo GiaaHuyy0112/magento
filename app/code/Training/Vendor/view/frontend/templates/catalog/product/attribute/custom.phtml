@@ -1,0 +1,15 @@
+<?php
+
+/** @var $block \Magento\Catalog\Block\Product\View\Attributes */
+$_attributeValue = $block->escapeHtml($_attributeValue);
+$_values = explode(',', $_attributeValue);
+?>
+<?php if ($_values && count($_values) > 0) : ?>
+    <ul class="attribute-values">
+        <?php foreach ($_values as $_value) : ?>
+            <li><?php echo $_value; ?></li>
+        <?php endforeach; ?>
+    </ul>
+<?php else : ?>
+    <div class="attribute-value"><?php echo $_attributeValue; ?></div>
+<?php endif; ?>

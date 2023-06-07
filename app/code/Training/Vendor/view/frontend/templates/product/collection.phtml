@@ -1,0 +1,13 @@
+<?php
+
+$productCollection = $block->getProductCollections();
+foreach ($productCollection as $product) {
+    print_r($product->getData());
+    echo "<br>";
+}
+
+?>
+<div>
+    <h1>Query</h1>
+    <p><?= $block->getQuery(); ?></p>
+</div>

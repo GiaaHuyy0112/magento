@@ -1,0 +1,22 @@
+<?php
+
+/** @var $block \Magento\Catalog\Block\Product\View\Attributes */
+// $attributeCode = 'my_multiselect_attribute'; // Replace with your attribute code
+// $attributeValues = $block->getProduct()->getAttributeText($attributeCode);
+$attributeCodes = $block->getAtCode();
+$attributeValues = [];
+foreach ($attributeCodes as $key => $value) {
+    $arr = [];
+    $arr['label'] = $block->getProduct()->getResource()->getAttribute($value)->getStoreLabel();
+    $arr['value'] = $block->getProduct()->getAttributeText($value);
+    $attributeValues[] = $arr;
+}
+?>
+
+<?php if (is_array($attributeValues)) : ?>
+    <ul class="attribute-values">
+        <?php foreach ($attributeValues as $attributeValue) : ?>
+            <p><strong><?= $block->escapeHtml($attributeValue['label']); ?>:</strong> <?= $block->escapeHtml($attributeValue['value']); ?></p>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>
