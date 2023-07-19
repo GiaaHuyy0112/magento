@@ -52,19 +52,6 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        // $storeManagerDataList = $this->_storeManager->getStores();
-        // $options = array();
-
-        // foreach ($storeManagerDataList as $key => $value) {
-        //     $options[] = ['label' => $value['name'] . ' - ' . $value['code'], 'id' => $key];
-        //     $storeId = $this->_storeManager->getWebsite($key)->getDefaultStore()->getId();
-        //     $rootNodeId = $this->_storeManager->getStore($storeId)->getRootCategoryId();
-        //     $categoryInstance = $this->_categoryRepository->get($rootNodeId, $storeId);
-        //     $name = $categoryInstance->getName();
-        // }
-
-
-
 
         $storeCollection = $this->storeCollectionFactory->create();
         $storeCollection->load();
