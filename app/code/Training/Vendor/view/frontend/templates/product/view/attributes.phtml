@@ -16,7 +16,13 @@ foreach ($attributeCodes as $key => $value) {
 <?php if (is_array($attributeValues)) : ?>
     <ul class="attribute-values">
         <?php foreach ($attributeValues as $attributeValue) : ?>
-            <p><strong><?= $block->escapeHtml($attributeValue['label']); ?>:</strong> <?= $block->escapeHtml($attributeValue['value']); ?></p>
+            <p><strong><?= $block->escapeHtml($attributeValue['label']); ?>:</strong>
+                <?php if (is_array($attributeValue['value'])) : ?>
+                    <?= $block->escapeHtml(implode(",", $attributeValue['value'])); ?>
+                <?php else : ?>
+                    <?= $block->escapeHtml($attributeValue['value']); ?>
+                <?php endif; ?>
+            </p>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
